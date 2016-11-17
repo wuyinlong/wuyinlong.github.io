@@ -58,5 +58,16 @@ difference: function difference(arr, other) {
       }
       return newArr
 },
+drop: function drop(arr, n){
+      var newArr = arr
+      
+      if(n == undefined){
+            n = 1
+        }
+        
+        newArr.splice(0,n)
+        
+        return newArr
+},
 }
 
