@@ -1,4 +1,4 @@
-var WuYinLong{
+var WuYinLong = {
 chunk: function chunk(arr, n) {
 
       var l = Math.ceil(arr.length / n)
