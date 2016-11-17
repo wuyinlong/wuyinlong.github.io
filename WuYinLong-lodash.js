@@ -1,4 +1,4 @@
-var WuYinLong{
+var WuYinLong = {
 chunk: function chunk(arr, n) {
 
       var l = Math.ceil(arr.length / n)
@@ -32,7 +32,7 @@ compact: function compact(arr) {
         }
         return Newarr
 },
-concat: function concat(){
+concat: function concat() {
         var newArr = []
         
         for (var i = 0; i < arguments.length; i++) {
