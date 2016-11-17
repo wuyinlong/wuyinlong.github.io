@@ -48,6 +48,15 @@ concat: function concat() {
         }
         return newArr
 },
+difference: function difference(arr, other) {
+      var newArr = []
 
+      for (var i = 0; i < arr.length; i++) {
+      if (arr[i] != other[i]) {
+          newArr.push(arr[i])
+      }
+      }
+      return newArr
+},
 }
 
