@@ -1,4 +1,4 @@
-var WuYinLong = {
+var WuYinLong{
 chunk: function chunk(arr, n) {
 
       var l = Math.ceil(arr.length / n)
@@ -24,11 +24,30 @@ compact: function compact(arr) {
         if (!!arr[i] == false) {
         continue //结束单次循环
         } else {
+        
         Newarr.push(arr[i])
+        
         }
 
         }
         return Newarr
 },
+concat: function concat(){
+        var newArr = []
+        
+        for (var i = 0; i < arguments.length; i++) {
+            
+        if (arguments[i][0] == undefined) {
+                newArr.push(arguments[i])
+        } else {
+                
+            for (var j = 0; j < arguments[i].length; j++) {
+                    newArr.push(arguments[i][j])
+            }
+          }
+        }
+        return newArr
+},
+
 }
 
