@@ -69,5 +69,20 @@ drop: function drop(arr, n){
         
         return newArr
 },
+dropRight: function dropRight(arr, n){
+      var newArr = arr
+      var len=newArr.length
+      
+      if(n == undefined){
+          n = len-1
+      }
+      
+      if(n>len){
+          n=2*n
+      }
+      
+      newArr.splice(len-n,n)
+      return newArr
+},
 }
 
