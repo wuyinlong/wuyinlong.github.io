@@ -93,7 +93,7 @@ map: function map(arr, fn) {
 
       return result
 },
-filter: function(arr, fn) {
+filter: function filter(arr, fn) {
         var newArr = []
         
         for (var i = 0; i < arr.length; i++) {
@@ -104,7 +104,7 @@ filter: function(arr, fn) {
         }
         return newArr
 },
-partition: function(arr, fn) {
+partition: function partition(arr, fn) {
         var result = [
             [],
             []
