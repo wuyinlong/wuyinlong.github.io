@@ -170,11 +170,11 @@ flattenDeep: function(arr) {
     for (var i = 0; i < arr.length; i++) {
 
     if (!Array.isArray(arr[i])) {
-      this reslut.push(arr[i])
+      this.reslut.push(arr[i])
     }
 
     if (Array.isArray(arr[i])) {
-      this flattenDeep(arr[i])
+      this.flattenDeep(arr[i])
     }
 
     return reslut
