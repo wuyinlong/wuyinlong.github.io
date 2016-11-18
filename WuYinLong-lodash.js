@@ -156,6 +156,22 @@ fill: function (arr, value, star, end) {
       }
       return arr
 },
+flatten: function (arr) {
+      var result=[]
+      
+      for (var i = 0; i < arr.length; i++) {
+        result=result.concat(arr[i])
+      }
+        return result
+},
+flattenDeep: function(arr) {
+      var reslut = []
 
+      arr = String(arr)
+
+      reslut = arr.split()
+
+      return reslut
+},      
 }
 
