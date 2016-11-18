@@ -143,6 +143,19 @@ every: function(arr,fn){
     }
     return true
 },
+fill: function (arr, value, star, end) {
+      for (var i = 0; i < arr.length; i++) {
+
+      if ((star == undefined) && (end == undefined)) {
+          arr[i] = value
+
+      } else {
+        arr[star] = value
+        arr[end - 1] = value
+      }
+      }
+      return arr
+},
 
 }
 
