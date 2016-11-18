@@ -165,13 +165,28 @@ flatten: function (arr) {
         return result
 },
 flattenDeep: function(arr) {
-      var reslut = []
+    var reslut = []
 
-      arr = String(arr)
+    for (var i = 0; i < arr.length; i++) {
 
-      reslut = arr.split()
+    if (!Array.isArray(arr[i])) {
+      this reslut.push(arr[i])
+    }
 
-      return reslut
-},      
+    if (Array.isArray(arr[i])) {
+      this flattenDeep(arr[i])
+    }
+
+    return reslut
+  }
+},
+fromPairs: function(pairs) {
+    var reslut = {}
+    
+    for(var i = o; i < arr.length; i++){
+      reslut[arr[i][0]]=arr[i][1]
+    }
+    return reslut
+},
 }
 
