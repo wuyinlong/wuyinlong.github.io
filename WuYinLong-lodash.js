@@ -104,5 +104,24 @@ filter: function(arr, fn) {
         }
         return newArr
 },
+partition: function partition(arr, fn) {
+        var ret = [
+          [],
+          []
+        ]
+
+        for (var i = 0; i < arr.length; i++) {
+          
+          ssif (fn(arr[i], i, arr)) {
+            
+            ret[0].push(arr[i])
+            } else {
+            
+            ret[1].push(arr[i])
+          }
+        }
+
+        return ret
+},      
 }
 
