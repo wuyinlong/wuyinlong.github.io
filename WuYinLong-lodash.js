@@ -1,5 +1,5 @@
 var WuYinLong = {
-chunk: function chunk(arr, n) {
+chunk: function(arr, n) {
 
       var l = Math.ceil(arr.length / n)
 
@@ -15,7 +15,7 @@ chunk: function chunk(arr, n) {
 
       return result
 },
-compact: function compact(arr) {
+compact: function(arr) {
       
         var Newarr = []
 
@@ -32,7 +32,7 @@ compact: function compact(arr) {
         }
         return Newarr
 },
-concat: function concat() {
+concat: function() {
         var newArr = []
         
         for (var i = 0; i < arguments.length; i++) {
@@ -48,7 +48,7 @@ concat: function concat() {
         }
         return newArr
 },
-difference: function difference(arr, other) {
+difference: function(arr, other) {
       var newArr = []
 
       for (var i = 0; i < arr.length; i++) {
@@ -58,7 +58,7 @@ difference: function difference(arr, other) {
       }
       return newArr
 },
-drop: function drop(arr, n){
+drop: function(arr, n){
       var newArr = arr
       
       if(n == undefined){
@@ -69,7 +69,7 @@ drop: function drop(arr, n){
         
         return newArr
 },
-dropRight: function dropRight(arr, n){
+dropRight: function(arr, n){
       var newArr = arr
       var len=newArr.length
       
@@ -84,7 +84,7 @@ dropRight: function dropRight(arr, n){
       newArr.splice(len-n,n)
       return newArr
 },
-map: function map(arr, fn) {
+map: function(arr, fn) {
       var result = []
 
       for (i = 0; i < arr.length; i++) {
@@ -93,7 +93,7 @@ map: function map(arr, fn) {
 
       return result
 },
-filter: function filter(arr, fn) {
+filter: function(arr, fn) {
         var newArr = []
         
         for (var i = 0; i < arr.length; i++) {
@@ -104,5 +104,21 @@ filter: function filter(arr, fn) {
         }
         return newArr
 },
+reduce: function(collection, reducer, initial) {
+      var start = 0
+      if (initial == undefined) {
+      initial = collection[0]
+      start = 1
+      }
+
+      var result = initial
+
+      for (var i = start; i<collection.length; i++) {
+      result = reducer(result, collection[i])
+      }
+
+      return result
+},
+
 }
 
