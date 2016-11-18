@@ -104,19 +104,5 @@ filter: function filter(arr, fn) {
         }
         return newArr
 },
-partition: function partition(arr, fn) {
-        var result = [
-            [],
-            []
-        ]
-        for (var i = 0; i < arr.length; i++) {ss
-            if (fn(arr[i])) {
-                result[0].push(arr[i])
-            } else {
-                result[1].push(arr[i])
-            }
-        }
-        return result
-},
 }
 
