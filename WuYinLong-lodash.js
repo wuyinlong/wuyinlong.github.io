@@ -84,5 +84,25 @@ dropRight: function dropRight(arr, n){
       newArr.splice(len-n,n)
       return newArr
 },
+map: function map(arr, fn) {
+      var result = []
+
+      for (i = 0; i < arr.length; i++) {
+        result.push(fn(arr[i], i, arr))
+      }
+
+      return result
+},
+filter: function(arr, fn) {
+        var newArr = []
+        
+        for (var i = 0; i < arr.length; i++) {
+          
+          if (fn(arr[i], i, arr)) {
+              newArr.push(arr[i])
+          }
+        }
+        return newArr
+},
 }
 
