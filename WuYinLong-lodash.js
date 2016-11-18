@@ -119,6 +119,22 @@ reduce: function(collection, reducer, initial) {
 
       return result
 },
+partition: function(arr, fn) {
+      var result = [
+      [],[]
+      ]
+
+      for (var i = 0; i < arr.length; i++) {
+      if (fn(arr[i], i, arr)) {
+      result[0].push(arr[i])
+      } else {
+      result[1].push(arr[i])
+      }
+      }
+
+      return result
+},
+
 
 }
 
