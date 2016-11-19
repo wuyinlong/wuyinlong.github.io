@@ -156,7 +156,7 @@ fill: function (arr, value, star, end) {
       }
       return arr
 },
-flatten: function (arr) {
+flatten: function(arr) {
       var result=[]
       
       for (var i = 0; i < arr.length; i++) {
@@ -164,21 +164,7 @@ flatten: function (arr) {
       }
         return result
 },
-flattenDeep: function(arr) {
-    var reslut = []
 
-    for (var i = 0; i < arr.length; i++) {
-
-    if (!Array.isArray(arr[i])) {
-      this.reslut.push(arr[i])
-    }
-
-    if (Array.isArray(arr[i])) {
-      this.flattenDeep(arr[i])
-    }
-
-    return reslut
-},
 fromPairs: function(pairs) {
     var reslut = {}
     
