@@ -178,7 +178,6 @@ flattenDeep: function(arr) {
     }
 
     return reslut
-  }
 },
 fromPairs: function(pairs) {
     var reslut = {}
