@@ -164,7 +164,6 @@ flatten: function(arr) {
       }
         return result
 },
-
 fromPairs: function(pairs) {
     var reslut = {}
     
