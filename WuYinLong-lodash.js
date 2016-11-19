@@ -172,5 +172,18 @@ fromPairs: function(pairs) {
     }
     return reslut
 },
+head: function(arr){
+    var reslut = []
+    var len = arr.length
+
+    if (len = 0) {
+
+      result = []
+    } else {
+
+      result = arr[i]
+    }
+    return result
+},
 }
 
