@@ -175,5 +175,18 @@ fromPairs: function(pairs) {
 head: function(arr){
     return arr[0]
 },
+indexOf: function(arr,value,n){
+    if (n == undefined) {
+    n = 0
+    }
+
+    var reslut = 0
+    for (var i = n; i < arr.length; i++) {
+      if (arr[i] == value) {
+      reslut = i
+      }
+    }
+    return reslut
+},
 }
 
