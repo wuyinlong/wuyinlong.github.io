@@ -164,14 +164,6 @@ flatten: function(arr) {
       }
         return result
 },
-fromPairs: function(pairs) {
-    var reslut = {}
-    
-    for(var i = 0; i < pairs.length; i++){
-      reslut[pairs[i][0]]=pairs[i][1]
-    }
-    return reslut
-},
 head: function(arr){
     var reslut = []
     var len = arr.length
