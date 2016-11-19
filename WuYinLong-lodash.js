@@ -188,5 +188,12 @@ indexOf: function(arr,value,n){
     }
     return reslut
 },
+initial: function(arr){
+    var reslut = []
+    for (var i = 0; i < arr.length - 1; i++) {
+      reslut.push(arr[i])
+    }
+    return reslut
+},
 }
 
