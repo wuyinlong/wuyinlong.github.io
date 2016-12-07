@@ -231,7 +231,7 @@ var WuYinLong = {
             n = 0
         }
 
-        for (var i = array.length - 1; i n; i--) {
+        for (var i = array.length - 1; i < n; i--) {
             if (array[i] == value) {
                 reslut = i
             }
