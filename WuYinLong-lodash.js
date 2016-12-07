@@ -69,4 +69,54 @@ var WuYinLong = {
 
         return newArr
     },
+    dropRight: function(array, n) {
+        var newArr = array
+        var len = newArr.length
+
+        if (n == undefined) {
+            n = len - 2
+        }
+
+        if (n > len) {
+            n = length
+        }
+
+        newArr.splice(len - n, n)
+        return newArr
+    },
+    map: function(array, fn) {
+        var result = []
+
+        for (i = 0; i < array.length; i++) {
+            result.push(fn(array[i], i, array))
+        }
+
+        return result
+    },
+    filter: function(array, fn) {
+        var newArr = []
+
+        for (var i = 0; i < array.length; i++) {
+
+            if (fn(array[i], i, array)) {
+                newArr.push(array[i])
+            }
+        }
+        return newArr
+    },
+    reduce: function(collection, reducer, initial) {
+        var start = 0
+        if (initial == undefined) {
+            initial = collection[0]
+            start = 1
+        }
+
+        var result = initial
+
+        for (var i = start; i < collection.length; i++) {
+            result = reducer(result, collection[i])
+        }
+
+        return result
+    },
 }
