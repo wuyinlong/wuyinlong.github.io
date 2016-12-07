@@ -70,7 +70,7 @@ var WuYinLong = {
         return newArr
     },
     dropRight: function(array, n) {
-        var len = newArr.length
+        var len = array.length
 
         if (n == undefined) {
             n = 1
@@ -198,7 +198,7 @@ var WuYinLong = {
     join: function(array, sparator) {
         var result = ""
         for (var i = 0; i < array.length - 1; i++) {
-            result += array[i] + n
+            result += array[i] + sparator
         }
         return result + array[array.length - 1]
     },
@@ -231,7 +231,7 @@ var WuYinLong = {
             n = 0
         }
 
-        for (var i = array.length - 1; i < n; i--) {
+        for (var i = array.length - 1; i > n; i--) {
             if (array[i] == value) {
                 reslut = i
             }
