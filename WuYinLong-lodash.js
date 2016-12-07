@@ -228,10 +228,10 @@ var WuYinLong = {
         var reslut
 
         if (n == undefined) {
-            n = 0
+            n = array.length
         }
 
-        for (var i = array.length - 1; i > n; i--) {
+        for (var i = n; i >= 0; i--) {
             if (array[i] == value) {
                 reslut = i
             }
