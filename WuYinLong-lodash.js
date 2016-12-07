@@ -48,4 +48,25 @@ var WuYinLong = {
         }
         return newArr
     },
+    difference: function(array, other) {
+        var newArr = []
+
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] != other[i]) {
+                newArr.push(array[i])
+            }
+        }
+        return newArr
+    },
+    drop: function(array, n) {
+        var newArr = array
+
+        if (n == undefined) {
+            n = 1
+        }
+
+        newArr.splice(0, n)
+
+        return newArr
+    },
 }
