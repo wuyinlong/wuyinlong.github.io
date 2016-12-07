@@ -14,6 +14,38 @@ var WuYinLong = {
         }
 
         return result
-    }
+    },
+    compact: function(array) {
 
+        var Newarray = []
+
+        for (i = 0; i < array.length; i++) {
+
+            if (!!array[i] == false) {
+                continue 
+            } else {
+
+                Newarray.push(array[i])
+
+            }
+
+        }
+        return Newarray
+    },
+    concat: function() {
+        var newArr = []
+
+        for (var i = 0; i < arguments.length; i++) {
+
+            if (arguments[i][0] == undefined) {
+                newArr.push(arguments[i])
+            } else {
+
+                for (var j = 0; j < arguments[i].length; j++) {
+                    newArr.push(arguments[i][j])
+                }
+            }
+        }
+        return newArr
+    },
 }
