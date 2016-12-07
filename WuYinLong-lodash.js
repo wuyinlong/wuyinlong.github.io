@@ -70,19 +70,17 @@ var WuYinLong = {
         return newArr
     },
     dropRight: function(array, n) {
-        var newArr = array
         var len = newArr.length
 
         if (n == undefined) {
-            n = len - 2
+            n = 1
         }
 
-        if (n > len) {
-            n = length
+        for (var i = 0; i < n; i++) {
+            array.pop()
         }
 
-        newArr.splice(len - n, n)
-        return newArr
+        return array
     },
     map: function(array, fn) {
         var result = []
@@ -200,7 +198,7 @@ var WuYinLong = {
     join: function(array, sparator) {
         var result = ""
         for (var i = 0; i < array.length - 1; i++) {
-            result += arrayay[i] + n
+            result += array[i] + n
         }
         return result + array[array.length - 1]
     },
@@ -233,7 +231,7 @@ var WuYinLong = {
             n = 0
         }
 
-        for (var i = array.length - 1; i >= n; i--) {
+        for (var i = array.length - 1; i n; i--) {
             if (array[i] == value) {
                 reslut = i
             }
@@ -419,7 +417,7 @@ var WuYinLong = {
     // 过滤对象中的值
     pullAll: function(array, value) {
         for (var i = 0; i < value.length; i++) {
-            for (var j = 1; j < array.length; j++) {
+            for (var j = 0; j < array.length; j++) {
                 if (value[i] == array[j]) {
                     array.splice(j, 1)
                 }
@@ -438,7 +436,7 @@ var WuYinLong = {
     // 二进制索引
     sortedIndex: function(array, value) {
         for (var i = 0; i < array.length; i++) {
-            if (array[i] == value) {
+            if (array[i] >= value) {
                 return i
             }
         }
