@@ -261,10 +261,6 @@ var WuYinLong = {
             }
         }
     },
-    tail: function(array) {
-        array.splice(0, 1)
-        return array
-    }
     pull: function(array, value) {
         for (var i = 0; i < array.length; i++) {
             for (var j = 1; j < arguments.length; j++) {
