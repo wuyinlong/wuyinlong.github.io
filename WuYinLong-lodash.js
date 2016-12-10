@@ -165,7 +165,7 @@ var WuYinLong = {
     },
     flattenDeep: function(array, n) {
         var result = new Array()
-        debugger
+
         for (var i = 0; i < array.length; i++) {
             if (!(Array.isArray(array[i]))) {
                 result.push(array[i])
@@ -211,21 +211,31 @@ var WuYinLong = {
         }
         return array[n]
     },
+    /**
+     * [indexOf 给定下标值寻找数组内元素并输出下标]
+     * @param  {[Array]} array  [目标数组]
+     * @param  {[string]} value [寻找元素]
+     * @param  {[Index]} n      [索引起始]
+     * @return {[Index]}        [description]
+     */
     indexOf: function(array, value, n) {
+        var index
+
         if (n == undefined) {
             n = 0
         }
-        var reslut = 0
         for (var i = n; i < array.length; i++) {
-            if (array[i] == value) {
-                reslut = i
+            if (array[i] == varlue) {
+                index = i
                 break
+            } else {
+                index = -1
             }
         }
-        return -1
+        return index
     },
     /**
-     * [lastIndexOf 倒叙查找字符并输出下标]
+     * [lastIndexOf 倒序查找字符并输出下标]
      * @param  {[Array]} array [目标数组]
      * @param  {[Number]} value  [索引值]
      * @param  {[index]} n     [起始下标]
@@ -241,6 +251,7 @@ var WuYinLong = {
         for (var i = n; i > 0; i--) {
             if (array[i] == value) {
                 index = i
+                break
             } else {
                 index = -1
             }
@@ -300,7 +311,6 @@ var WuYinLong = {
             }
         }
     },
-
     sortedIndexOf: function(array, value) {
         for (var i = 0; i < array.length; i++) {
             if (array[i] == value) {
@@ -341,11 +351,11 @@ var WuYinLong = {
         return array
     },
     /**
-     * [take 从开始获取到第 n 个元素]
+     * [take 从开始获取到 n 个元素]
      * @param  {[Array]} array [目标数组]
      * @return {[Array]}       [输出数组]
      */
-    take: function(array) {
+    take: function(array, n) {
         var result = new Array()
         if (n == undefined) {
             n = 1
@@ -358,14 +368,110 @@ var WuYinLong = {
         }
         return result
     },
+    /**
+     * [takeRight 从后往前获取 n 个元素]
+     * @param  {[Array]} array [目标数组]
+     * @param  {[Number]} n    [输出元素个数]
+     * @return {[Array]}       [输出结果]
+     */
     takeRight: function(array, n) {
         if (n == undefined) {
             n = 1
         }
-        var j = array.length - n
-        for (var i = 0; i < j; i++) {
-            array.shift()
+        if (n == 0) {
+            return []
+        }
+        if (n > array.length) {
+            return array
+        }
+        return array.slice(array.length - n)
+    },
+    /**
+     * [union Arrays的并集]
+     * @param  {[Array]} array [目标数组]
+     * @return {[Array]}       [并集数组]
+     */
+    union: function(array) {
+        var result = []
+        for (var i = 0; i < arguments.length; i++) {
+            for (var j = 0; j < arguments[i].length; j++) {
+                if (result.indexOf(arguments[i][j]) == -1) {
+                    result.push(arguments[i][j])
+                }
+            }
+        }
+        return result
+    },
+    /**
+     * [uniq 去除相同项并按照下标排序]
+     * @param  {[Array]} array [目标数组]
+     * @return {[Array]}       [输出数组]
+     * 两个循环遍历数组的前后项作对比，类似冒泡排序
+     */
+    uniq: function(array) {
+        for (var i = 0; i < array.length; i++) {
+            for (var j = i + 1; i < array.length; j++) {
+                if (array[i] == array[j]) {
+                    array.splice(i, 1)
+                }
+            }
         }
         return array
+    },
+    /**
+     * [unzip 数组元素重新分类存放在不同的数组]
+     * @return {[Array]} [输出数组]
+     * 得到输出数组位多少个
+     * 交互替换元素
+     */
+    unzip: function() {
+        var len = arguments[0][0].length
+        var newArray = new Array(len)
+
+        for (var i = 0; i < newArray.length; i++) {
+            newArray[i] = []
+        }
+        for (var j = 0; j < len; j++) {
+            newArray[j][0] = arguments[0][0][j]
+            newArray[j][1] = arguments[0][1][j]
+        }
+        return newArray
+    },
+    /**
+     * [without 去除数组中指定元素并输出剩余数组]
+     * @param  {[Array]} array [目标数组]
+     * @return {[Array]}       [输出数组]
+     * 指定元素可以有多个
+     * arguments包含着目标数组,所以遍历时可以从index 1开始
+     */
+    without: function(array) {
+        var len = array.length
+        var lenValue = arguments.length
+        for (var i = 1; i < lenValue; i++) {
+            for (var j = 0; j < len; j++) {
+                if (arguments[i] == array[j]) {
+                    array.splice(j, 1)
+                    i = 0
+                }
+            }
+        }
+        return array
+    },
+    /**
+     * [zip 分组函数,包含每个数组的第1,2...项]
+     * @return {[Array]} [输出数组]
+     * 目标数组会有多个,提前确定生成的数组的length
+     * 元素的相互交换
+     */
+    zip: function() {
+        var result = [
+            [],
+            []
+        ]
+        for (var i = 0; i < arguments.length; i++) {
+            result[0][i] = arguments[i][0]
+            result[1][i] = arguments[i][1]
+        }
+        return result
     },
 }
