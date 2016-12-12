@@ -225,7 +225,7 @@ var WuYinLong = {
             n = 0
         }
         for (var i = n; i < array.length; i++) {
-            if (array[i] == varlue) {
+            if (array[i] == value) {
                 index = i
                 break
             } else {
@@ -406,13 +406,15 @@ var WuYinLong = {
      * [uniq 去除相同项并按照下标排序]
      * @param  {[Array]} array [目标数组]
      * @return {[Array]}       [输出数组]
-     * 两个循环遍历数组的前后项作对比，类似冒泡排序
+     * 两个循环遍历数组的前后作项对比，类似冒泡排序
+     * 每次遍历结束时两个指针要指向同一个元素
      */
     uniq: function(array) {
         for (var i = 0; i < array.length; i++) {
             for (var j = i + 1; j < array.length; j++) {
                 if (array[i] == array[j]) {
-                    array.splice(i, 1)
+                    array.splice(j, 1)
+                    j = i
                 }
             }
         }
